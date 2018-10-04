@@ -17,8 +17,11 @@ export class SignUpComponent implements OnInit {
 	isFirstNameInValid: boolean;
 	isLastNameInValid: boolean;
 	isEmailInValid: boolean;
+	isEmailInValidAddress: boolean;
 	isUsernameInValid: boolean;
 	isPasswordInValid: boolean;
+	showSuccessMessage: boolean;
+	emailRegex: any = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	constructor(
 		private fb: FormBuilder,
 		private userService: UserService,
@@ -50,6 +53,7 @@ export class SignUpComponent implements OnInit {
 		this.isFirstNameInValid = false;
 		this.isLastNameInValid = false;
 		this.isEmailInValid = false;
+		this.isEmailInValidAddress = false;
 		this.isUsernameInValid = false;
 		this.isPasswordInValid = false;
 	}
@@ -66,6 +70,9 @@ export class SignUpComponent implements OnInit {
 			if ((signupForm.controls.email.errors && signupForm.controls.email.errors.required)) {
 				this.isEmailInValid = true;
 			}
+			if ((signupForm.controls.email.errors && signupForm.controls.email.errors.pattern)) {
+				this.isEmailInValidAddress = true;
+			}
 			if ((signupForm.controls.userName.errors && signupForm.controls.userName.errors.required)) {
 				this.isUsernameInValid = true;
 			}
@@ -77,7 +84,11 @@ export class SignUpComponent implements OnInit {
 			this.userService.registerUser(this.user)
 				.subscribe((result) => {
 					console.log('Result: ' + result);
-					this.router.navigate(['/login']);
+					this.showSuccessMessage = true;
+					setTimeout(() => {
+						this.showSuccessMessage = false;
+						this.router.navigate(['/login']);
+					} , 4000);
 				});
 		}
 	}

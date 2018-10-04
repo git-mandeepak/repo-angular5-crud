@@ -20,10 +20,13 @@
 				<div class="form-group">
 					<label for="email" class="col-md-5 control-label">Email</label>
 					<div class="col-md-9">
-						<input type="text" [class.invalid-control]="isEmailInValid" class="form-control" [(ngModel)]="user.Email" formControlName="email" name="email" placeholder="Email Address">
+						<input type="email" [class.invalid-control]="isEmailInValid" [pattern] = "emailRegex" class="form-control" [(ngModel)]="user.Email" formControlName="email" name="email" placeholder="Email Address">
 					</div>
 					<p *ngIf="isEmailInValid" class="color-red">
 						Email is required.
+					</p>
+					<p *ngIf="isEmailInValidAddress" class="color-red">
+						Invalid Email Address
 					</p>
 				</div>
 
@@ -71,6 +74,9 @@
 							<i class="icon-facebook"></i>   Sign Up with Facebook</button>
 					</div>
 
+				</div>
+				<div class="alert alert-success" *ngIf="showSuccessMessage">
+					Saved Successfully
 				</div>
 			</form>
 		</div>

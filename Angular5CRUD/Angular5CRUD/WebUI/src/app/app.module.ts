@@ -1,3 +1,4 @@
+// Built-in
 import { HttpClientModule } from '@angular/common/http';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -7,6 +8,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { APP_BASE_HREF, Location } from '@angular/common';
 
+// Components
 import { AppHomeComponent } from './app-home/app-home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
