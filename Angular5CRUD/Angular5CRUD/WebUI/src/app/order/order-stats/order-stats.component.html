@@ -1,0 +1,16 @@
+<h3>Order Statistics</h3>
+
+<div>
+  <p>Please choose date range</p>
+    <input matInput [matDatepicker]="pickerFrom" placeholder="Date From" (dateChange)="onFromDateChange($event)">
+    <mat-datepicker-toggle matSuffix [for]="pickerFrom"></mat-datepicker-toggle>
+    <mat-datepicker #pickerFrom startView="year" [startAt]="startDate"></mat-datepicker>
+
+    <input matInput [matDatepicker]="pickerTo" placeholder="Date To" (dateChange)="onToDateChange($event)">
+    <mat-datepicker-toggle matSuffix [for]="pickerTo"></mat-datepicker-toggle>
+    <mat-datepicker #pickerTo startView="year" [startAt]="startDate"></mat-datepicker>
+</div>
+
+<div *ngIf="chart">
+  <canvas id="canvas">{{ chart }}</canvas>
+</div>

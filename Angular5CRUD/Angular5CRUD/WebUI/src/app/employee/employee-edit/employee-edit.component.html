@@ -1,0 +1,47 @@
+<div class="jumbotron">
+	<h1>Edit Employee</h1>
+	<p class="lead">Portal to manage employees of the organization.</p>
+</div>
+<div class="jumbotron container">
+	<form [formGroup]="empForm" class="emp-form empform">
+		<div class="form-row">
+			<div class="form-group col-md-6">
+				<input class="form-control" [(ngModel)]="employee.FirstName" name="FirstName" formControlName="firstName" placeholder="First Name"
+				 required />
+			</div>
+			<div class="form-group col-md-6">
+				<input class="form-control" [(ngModel)]="employee.LastName" name="LastName" formControlName="lastName" placeholder="Last Name"
+				 required>
+			</div>
+		</div>
+		<div class="form-group">
+			<input class="form-control" [(ngModel)]="employee.Title" name="Title" formControlName="title" placeholder="Title" required>
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-6">
+				<input class="form-control" [(ngModel)]="employee.HomePhone" name="HomePhone" formControlName="homePhone" placeholder="HomePhone">
+			</div>
+		</div>
+		<div>
+			<p *ngIf="isFirstNameInValid" class="color-red">
+				First Name is required.
+			</p>
+			<p *ngIf="isLastNameInValid" class="color-red">
+				Last Name is required.
+			</p>
+			<p *ngIf="isTitleInValid" class="color-red">
+				Title is required.
+			</p>
+			<p *ngIf="isHomePhoneInValid" class="color-red">
+				Home phone is required.
+			</p>
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-3">
+				<button class="btn btn-lg btn-block btn-info" (click)="edit(empForm)">
+					<i class="fa fa-floppy-o"></i> Update</button>
+					<img *ngIf="this.employeeService.isLoading"  src="content/dist/assets/images/loader.gif" alt="loading" width="80px">
+			</div>
+		</div>
+	</form>
+</div>

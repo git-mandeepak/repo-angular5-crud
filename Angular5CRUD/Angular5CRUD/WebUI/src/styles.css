@@ -1,0 +1,70 @@
+/* You can add global styles to this file, and also import other style files */
+/* Sticky footer styles
+-------------------------------------------------- */
+
+/*....@import "~@angular/material/prebuilt-themes/indigo-pink.css";...*/
+
+html {
+	position: relative;
+	min-height: 100%;
+  }
+  body {
+	margin-bottom: 60px; /* Margin bottom by footer height */
+  }
+  .footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 60px; /* Set the fixed height of the footer here */
+	line-height: 60px; /* Vertically center the text there */
+	background-color: #f5f5f5;
+  }
+  .empform{
+	  padding-top: 15px;
+  }
+  
+  /* Custom page CSS
+  -------------------------------------------------- */
+  /* Not required for template or sticky footer method. */
+  
+  .container {
+	width: auto;
+	max-width: 680px;
+	padding: 0 15px;
+  }
+
+  .jumboeditdetail{
+	padding: 1rem 2rem;
+	margin-bottom: 0rem;
+  }
+
+  .paginationcontrol{
+	float: right;
+  }
+
+  .glyphicon {  margin-bottom: 10px;margin-right: 10px;}
+
+	small {
+		display: block;
+		line-height: 1.428571429;
+		color: #999;
+	}
+
+	.color-red {
+		color: red;
+	}
+
+	.invalid-control{
+		border-color: red;
+	}
+
+	.securityboxcontainer{
+		margin-top: 50px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+
+  /* Media Queries
+  ---------------------------------------------------*/
+  

@@ -1,0 +1,78 @@
+<div id="signupbox" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 securityboxcontainer">
+	<div class="panel panel-info">
+		<div class="panel-heading">
+			<div class="panel-title">Sign Up</div>
+			<div style="float:right; font-size: 85%; position: relative; top:-10px">
+				<a id="signinlink" [routerLink]="['/login']">Sign In</a>
+			</div>
+		</div>
+		<div class="panel-body">
+			<form [formGroup]="signupForm" class="form-horizontal" role="form">
+				<div class="form-group">
+					<label for="userName" class="col-md-5 control-label">Username</label>
+					<div class="col-md-9">
+						<input type="text" [class.invalid-control]="isUsernameInValid" class="form-control" [(ngModel)]="user.UserName" formControlName="userName" name="userName" placeholder="Username">
+					</div>
+					<p *ngIf="isUsernameInValid" class="color-red">
+						User Name is required.
+					</p>
+				</div>
+				<div class="form-group">
+					<label for="email" class="col-md-5 control-label">Email</label>
+					<div class="col-md-9">
+						<input type="text" [class.invalid-control]="isEmailInValid" class="form-control" [(ngModel)]="user.Email" formControlName="email" name="email" placeholder="Email Address">
+					</div>
+					<p *ngIf="isEmailInValid" class="color-red">
+						Email is required.
+					</p>
+				</div>
+
+				<div class="form-group">
+					<label for="firstname" class="col-md-5 control-label">First Name</label>
+					<div class="col-md-9">
+						<input type="text" [class.invalid-control]="isFirstNameInValid" class="form-control" [(ngModel)]="user.FirstName" formControlName="firstName" name="firstname" placeholder="First Name">
+					</div>
+					<p *ngIf="isFirstNameInValid" class="color-red">
+						First Name is required.
+					</p>
+				</div>
+				<div class="form-group">
+					<label for="lastname" class="col-md-5 control-label">Last Name</label>
+					<div class="col-md-9">
+						<input type="text" [class.invalid-control]="isLastNameInValid" class="form-control" [(ngModel)]="user.LastName" formControlName="lastName" name="lastname" placeholder="Last Name">
+					</div>
+					<p *ngIf="isLastNameInValid" class="color-red">
+						Last Name is required.
+					</p>
+				</div>
+				<div class="form-group">
+					<label for="password" class="col-md-5 control-label">Password</label>
+					<div class="col-md-9">
+						<input type="password" [class.invalid-control]="isPasswordInValid" class="form-control" [(ngModel)]="user.Password" formControlName="password" name="passwd" placeholder="Password">
+					</div>
+					<p *ngIf="isPasswordInValid" class="color-red">
+						Password is required.
+					</p>
+				</div>
+
+				<div class="form-group">
+					<!-- Button -->
+					<div class="col-md-offset-3 col-md-9">
+						<button id="btn-signup" type="button" class="btn btn-info" (click)="register(signupForm)">
+							<i class="icon-hand-right"></i> Sign Up</button>
+						<span style="margin-left:8px;">or</span>
+					</div>
+				</div>
+
+				<div style="border-top: 1px solid #999; padding-top:20px" class="form-group">
+
+					<div class="col-md-offset-3 col-md-9">
+						<button id="btn-fbsignup" type="button" class="btn btn-primary">
+							<i class="icon-facebook"></i>   Sign Up with Facebook</button>
+					</div>
+
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
