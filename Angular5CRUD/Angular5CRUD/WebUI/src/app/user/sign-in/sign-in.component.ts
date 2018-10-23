@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { UserService } from '../user.service';
+import { doEncrypt } from '../../Shared/app.globals';
 
 @Component({
 	selector: 'app-sign-in',
@@ -8,7 +11,10 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class SignInComponent implements OnInit {
 	loginForm: FormGroup;
-	constructor(private fb: FormBuilder) { }
+	userName: any = '';
+	password: any = '';
+
+	constructor(private fb: FormBuilder, private router: Router, private userService: UserService) { }
 
 	ngOnInit() {
 		this.createForm();
@@ -16,8 +22,21 @@ export class SignInComponent implements OnInit {
 
 	createForm() {
 		this.loginForm = this.fb.group({
-
+			userName: ['', Validators.required],
+			password: ['', Validators.required],
 		});
+	}
+
+	onSignin() {
+		this.userService.userAuthNodeServer(this.userName, doEncrypt(this.password))
+		.subscribe(result => {
+			localStorage.setItem("token", result["token"]);
+			console.log(localStorage.getItem("token"));
+			this.router.navigate(['/employee', 'list']);
+		});
+
+		//this.router.navigate(['/employee', 'list']);
+		//console.log("Sign in hit" + this.userName);
 	}
 
 }

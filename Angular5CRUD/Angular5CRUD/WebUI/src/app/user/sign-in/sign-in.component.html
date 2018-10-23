@@ -12,13 +12,13 @@
 					<span class="input-group-addon">
 						<i class="glyphicon glyphicon-user"></i>
 					</span>
-					<input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username or email">
+					<input id="login-username" type="email" class="form-control" formControlName="userName" name="userName" [(ngModel)]="userName" placeholder="username or email">
 				</div>
 				<div style="margin-bottom: 25px" class="input-group">
 					<span class="input-group-addon">
 						<i class="glyphicon glyphicon-lock"></i>
 					</span>
-					<input id="login-password" type="password" class="form-control" name="password" placeholder="password">
+					<input id="login-password" type="password" class="form-control" formControlName="password" name="password" [(ngModel)]="password" placeholder="password">
 				</div>
 				<div class="input-group">
 					<div class="checkbox">
@@ -31,7 +31,8 @@
 					<!-- Button -->
 
 					<div class="col-sm-12 controls">
-						<a id="btn-login" [routerLink]="['/employee', 'list']" class="btn btn-success">Login </a>
+						<!-- <a id="btn-login" [routerLink]="['/employee', 'list']" class="btn btn-success">Login </a> -->
+						<a id="btn-login" (click)="onSignin()" class="btn btn-success">Login </a>
 						<a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a>
 
 					</div>

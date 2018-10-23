@@ -5,6 +5,7 @@ import * as CryptoJS from 'crypto-js';
 
 import { User } from '../../models/user.model';
 import { UserService } from '../user.service';
+import { doEncrypt } from '../../Shared/app.globals';
 
 @Component({
 	selector: 'app-sign-up',
@@ -80,7 +81,7 @@ export class SignUpComponent implements OnInit {
 				this.isPasswordInValid = true;
 			}
 		} else {
-			this.user.Password = this.doEncrypt(this.user.Password);
+			this.user.Password = doEncrypt(this.user.Password);
 			this.userService.registerUser(this.user)
 				.subscribe((result) => {
 					console.log('Result: ' + result);
@@ -92,12 +93,4 @@ export class SignUpComponent implements OnInit {
 				});
 		}
 	}
-
-	doEncrypt(password: string): string {
-		const key = CryptoJS.enc.Base64.parse(password);
-		const iv = CryptoJS.enc.Base64.parse('#base64IV#');
-		const encrypted = CryptoJS.AES.encrypt('Secret Text', key, { iv: iv }).toString();
-		return encrypted;
-	}
-
 }

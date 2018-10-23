@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 
 import { User } from '../models/user.model';
 import { environment } from '../../environments/environment';
+import { Observable } from 'rxjs/Observable';
 
 
 @Injectable()
@@ -24,7 +25,7 @@ export class UserService {
 
 		const reqHeader = new HttpHeaders({ 'No-Auth': 'True', 'Content-Type': 'application/json' });
 		//return this.http.post(this.rootUrl + '/api/User/Register', body, { headers: reqHeader });
-		return this.http.post(this.rootUrl + '/Users/register', body, { headers: reqHeader });
+		return this.http.post(this.rootUrl + '/User/register', body, { headers: reqHeader });
 	}
 
 	userAuthentication(userName, password) {
@@ -37,4 +38,12 @@ export class UserService {
 		return this.http.get(this.rootUrl + '/api/GetUserClaims');
 	}
 
+	userAuthNodeServer(email, password) {
+		const data = {
+			"email": email,
+			"password": password
+		};
+		const reqHeader = new HttpHeaders({ 'Content-Type': 'application/json'});
+		return this.http.post(this.rootUrl + '/user/authenticate', data, {headers: reqHeader});
+	}
 }
