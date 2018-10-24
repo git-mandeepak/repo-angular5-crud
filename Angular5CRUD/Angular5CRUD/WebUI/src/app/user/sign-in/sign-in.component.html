@@ -7,7 +7,7 @@
 			</div>
 		</div>
 		<div style="padding-top:30px" class="panel-body">
-			<form [formGroup]="loginForm" class="form-horizontal">
+			<form [formGroup]="loginForm" class="form-horizontal" (keydown)="keyDownFunction($event)">
 				<div style="margin-bottom: 25px" class="input-group">
 					<span class="input-group-addon">
 						<i class="glyphicon glyphicon-user"></i>
@@ -32,7 +32,7 @@
 
 					<div class="col-sm-12 controls">
 						<!-- <a id="btn-login" [routerLink]="['/employee', 'list']" class="btn btn-success">Login </a> -->
-						<a id="btn-login" (click)="onSignin()" class="btn btn-success">Login </a>
+						<a id="btn-login" (click)="Signin()" class="btn btn-success">Login </a>
 						<a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a>
 
 					</div>

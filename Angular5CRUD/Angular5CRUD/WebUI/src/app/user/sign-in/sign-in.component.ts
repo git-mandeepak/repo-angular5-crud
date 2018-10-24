@@ -29,7 +29,7 @@ export class SignInComponent implements OnInit {
 		});
 	}
 
-	onSignin() {
+	Signin() {
 		this.userService.userAuthNodeServer(this.userName, doEncrypt(this.password))
 			.subscribe(result => {
 				this.userService.setToken(result["token"]);
@@ -44,5 +44,11 @@ export class SignInComponent implements OnInit {
 	reset() {
 		this.showErrorMessage = false;
 	}
+
+	keyDownFunction(event) {
+		if (event.keyCode === 13) {
+		  this.Signin();
+		}
+	  }
 
 }
