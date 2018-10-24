@@ -12,14 +12,16 @@ import { UserComponent } from './user/user.component';
 import { OrderComponent } from './order/order.component';
 import { OrdersComponent } from './order/orders/orders.component';
 import { OrderStatsComponent } from './order/order-stats/order-stats.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const appRoutes: Routes = [
 	{
 		path: 'employee',
 		component: AppHomeComponent,
+		canActivate: [AuthGuard],
 		data: { title: 'App Home' },
 		children: [
-			{ path: 'list', component: EmployeesComponent, },
+			{ path: 'list', component: EmployeesComponent },
 			{ path: 'add', component: EmployeeAddComponent },
 			{ path: 'edit/:id', component: EmployeeEditComponent },
 			{ path: 'order', component: OrderComponent }

@@ -16,6 +16,7 @@ import { EmployeeModule } from './Employee/Employee.module';
 import { UserModule } from './user/user.module';
 import { OrderModule } from './order/order.module';
 import { getBaseLocation } from './Shared/app.globals';
+import { AuthGuard } from './auth/auth.guard';
 
 @NgModule({
 	declarations: [

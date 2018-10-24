@@ -43,7 +43,40 @@ export class UserService {
 			"email": email,
 			"password": password
 		};
-		const reqHeader = new HttpHeaders({ 'Content-Type': 'application/json'});
-		return this.http.post(this.rootUrl + '/user/authenticate', data, {headers: reqHeader});
+		const reqHeader = new HttpHeaders({ 'Content-Type': 'application/json' });
+		return this.http.post(this.rootUrl + '/user/authenticate', data, { headers: reqHeader });
 	}
+
+	setToken(token: string) {
+		localStorage.setItem("token", token);
+	}
+
+	deleteToken() {
+		localStorage.removeItem('token');
+	}
+
+	getToken() {
+		return localStorage.getItem('token');
+	}
+
+	getUserPayload() {
+		const token = this.getToken();
+		if (token) {
+			const userPayload = atob(token.split('.')[1]);
+			return JSON.parse(userPayload);
+		} else {
+			return null;
+		}
+	}
+
+	isLoggedIn() {
+		const userPayload = this.getUserPayload();
+		if (userPayload) {
+			console.log(userPayload);
+			console.log(Date.now() + "****************" + (Date.now() / 1000));
+		  return userPayload.exp > Date.now() / 1000;
+		} else {
+		  return false;
+		}
+	  }
 }

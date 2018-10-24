@@ -13,6 +13,8 @@ export class SignInComponent implements OnInit {
 	loginForm: FormGroup;
 	userName: any = '';
 	password: any = '';
+	serverErrorMessages: string;
+	showErrorMessage = false;
 
 	constructor(private fb: FormBuilder, private router: Router, private userService: UserService) { }
 
@@ -29,14 +31,18 @@ export class SignInComponent implements OnInit {
 
 	onSignin() {
 		this.userService.userAuthNodeServer(this.userName, doEncrypt(this.password))
-		.subscribe(result => {
-			localStorage.setItem("token", result["token"]);
-			console.log(localStorage.getItem("token"));
-			this.router.navigate(['/employee', 'list']);
-		});
+			.subscribe(result => {
+				this.userService.setToken(result["token"]);
+				this.router.navigate(['/employee', 'list']);
+			},
+			err => {
+				this.showErrorMessage = true;
+				this.serverErrorMessages = err.error.message;
+			});
+	}
 
-		//this.router.navigate(['/employee', 'list']);
-		//console.log("Sign in hit" + this.userName);
+	reset() {
+		this.showErrorMessage = false;
 	}
 
 }
