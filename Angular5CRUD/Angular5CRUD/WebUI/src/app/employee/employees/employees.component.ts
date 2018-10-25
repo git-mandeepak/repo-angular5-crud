@@ -5,7 +5,7 @@ import { Employee } from '../../Models/employee';
 import { PagerModel } from '../../Models/PagerModel';
 import { Pager } from '../../Shared/app.globals';
 import { EmployeeDetailComponent } from '../employee-detail/employee-detail.component';
-import { EmployeeService } from '../Services/employee.service';
+import { EmployeeNodeService } from '../services/employee-node.service';
 
 @Component({
 	selector: 'app-employees',
@@ -18,7 +18,7 @@ export class EmployeesComponent implements OnInit {
 	pagerModel: PagerModel;
 
 	constructor(
-		private employeeService: EmployeeService,
+		private employeeService: EmployeeNodeService,
 		private dialog: MatDialog) {
 		this.pagerModel = new PagerModel();
 		this.pagerModel.CurrentPage = Pager.CurrentPage;

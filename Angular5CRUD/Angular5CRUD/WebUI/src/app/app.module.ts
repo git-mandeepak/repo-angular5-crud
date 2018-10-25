@@ -1,5 +1,5 @@
 // Built-in
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -17,6 +17,7 @@ import { UserModule } from './user/user.module';
 import { OrderModule } from './order/order.module';
 import { getBaseLocation } from './Shared/app.globals';
 import { AuthGuard } from './auth/auth.guard';
+import { AuthInterceptor } from './auth/auth.interceptor';
 
 @NgModule({
 	declarations: [
@@ -38,6 +39,11 @@ import { AuthGuard } from './auth/auth.guard';
 	],
 	providers: [
 		{
+			provide: HTTP_INTERCEPTORS,
+			useClass: AuthInterceptor,
+			multi: true
+		},
+		{
 			provide: APP_BASE_HREF,
 			useFactory: getBaseLocation
 		},
@@ -47,7 +53,8 @@ import { AuthGuard } from './auth/auth.guard';
 				hasBackdrop: true,
 				// panelClass: 'modal-popup-container'
 			}
-		}],
+		},
+		AuthGuard],
 	bootstrap: [AppComponent],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })

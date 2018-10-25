@@ -3,9 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { Employee } from '../../Models/employee';
-import { EmployeeService } from '../Services/employee.service';
-
-
+import { EmployeeNodeService } from '../services/employee-node.service';
 @Component({
 	selector: 'app-employee-edit',
 	templateUrl: './employee-edit.component.html',
@@ -20,7 +18,7 @@ export class EmployeeEditComponent implements OnInit {
 	isHomePhoneInValid = false;
 	constructor(
 		private fb: FormBuilder,
-		private employeeService: EmployeeService,
+		private employeeService: EmployeeNodeService,
 		private router: Router,
 		private route: ActivatedRoute) {
 		this.createForm();

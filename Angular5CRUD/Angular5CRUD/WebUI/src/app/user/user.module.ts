@@ -21,7 +21,6 @@ import { AuthGuard } from '../auth/auth.guard';
 		SignUpComponent
 	],
 	providers: [
-		AuthGuard,
 		UserService
 	]
 })

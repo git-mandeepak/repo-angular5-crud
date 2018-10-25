@@ -9,6 +9,7 @@ import { EmployeeDetailComponent } from './employee-detail/employee-detail.compo
 import { EmployeeEditComponent } from './employee-edit/employee-edit.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { EmployeeService } from './Services/employee.service';
+import { EmployeeNodeService } from './services/employee-node.service';
 
 @NgModule({
 	imports: [
@@ -27,7 +28,7 @@ import { EmployeeService } from './Services/employee.service';
 		EmployeeDetailComponent
 	],
 	providers: [
-		EmployeeService
+		EmployeeService, EmployeeNodeService
 	]
 })
 export class EmployeeModule { }
