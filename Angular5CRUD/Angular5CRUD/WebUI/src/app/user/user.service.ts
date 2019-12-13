@@ -10,7 +10,7 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class UserService {
-	//readonly rootUrl = 'http://gind04dxb4wj542.bdx.com/em.webapi';
+	//readonly rootUrl = 'http://gind04lxb5rf0n2.bdx.com/EM.WebApi/api';
 	readonly rootUrl = environment.apiBaseUrl;
 	constructor(private http: HttpClient) { }
 

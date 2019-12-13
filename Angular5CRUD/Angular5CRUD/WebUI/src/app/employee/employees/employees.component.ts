@@ -18,7 +18,7 @@ export class EmployeesComponent implements OnInit {
 	pagerModel: PagerModel;
 
 	constructor(
-		private employeeService: EmployeeNodeService,
+		public employeeService: EmployeeNodeService,
 		private dialog: MatDialog) {
 		this.pagerModel = new PagerModel();
 		this.pagerModel.CurrentPage = Pager.CurrentPage;

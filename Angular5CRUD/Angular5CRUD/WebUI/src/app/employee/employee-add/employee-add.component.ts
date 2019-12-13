@@ -62,7 +62,8 @@ export class EmployeeAddComponent implements OnInit {
 			this.employeeService.createEmployees(this.employee)
 			.subscribe((result) => {
 				console.log('Result: ' + result);
-				this.router.navigate(['/apphome/employees']);
+				// this.router.navigate(['/apphome/employees']);
+				this.router.navigate(['/employee', 'list']);
 			});
 		}
 	}

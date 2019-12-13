@@ -11,7 +11,7 @@ import { Employee } from '../../Models/employee';
 	styleUrls: ['./employee-detail.component.css']
 })
 export class EmployeeDetailComponent implements OnInit {
-	private employee: Employee;
+	public employee: Employee;
 	constructor(
 		private router: Router,
 		@Inject(MAT_DIALOG_DATA) public data: any,

@@ -42,6 +42,12 @@
 					<i class="fa fa-floppy-o"></i> Update</button>
 					<img *ngIf="this.employeeService.isLoading"  src="content/dist/assets/images/loader.gif" alt="loading" width="80px">
 			</div>
+
+			<div class="form-group col-md-3">
+				<button class="btn btn-lg btn-block btn-info" (click)="edit(empForm)">
+					<i class="fa fa-floppy-o"></i> Test</button>
+					<img *ngIf="this.employeeService.isLoading"  src="content/dist/assets/images/loader.gif" alt="loading" width="80px">
+			</div>
 		</div>
 	</form>
 </div>

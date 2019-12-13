@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { Employee } from '../../Models/employee';
 import { EmployeeNodeService } from '../services/employee-node.service';
+import { EmployeeService } from '../Services/employee.service';
 @Component({
 	selector: 'app-employee-edit',
 	templateUrl: './employee-edit.component.html',
@@ -19,6 +20,7 @@ export class EmployeeEditComponent implements OnInit {
 	constructor(
 		private fb: FormBuilder,
 		private employeeService: EmployeeNodeService,
+		private empDotNetService: EmployeeService,
 		private router: Router,
 		private route: ActivatedRoute) {
 		this.createForm();
@@ -54,10 +56,12 @@ export class EmployeeEditComponent implements OnInit {
 			}
 		} else {
 			console.log(this.employee);
-			this.employeeService.editEmployees(this.employee)
+			//this.employeeService.editEmployees(this.employee)
+			this.empDotNetService.editEmployees(this.employee)
 			.subscribe((result) => {
 				console.log('Result: ' + result);
-				this.router.navigate(['/apphome/employees']);
+				// this.router.navigate(['/apphome/employees']);
+				this.router.navigate(['/employee', 'list']);
 			});
 		}
 	}
