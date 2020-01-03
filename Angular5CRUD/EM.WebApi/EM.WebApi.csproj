@@ -229,6 +229,7 @@
     <Compile Include="Models\DateRangeModel.cs" />
     <Compile Include="Models\PagerModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />

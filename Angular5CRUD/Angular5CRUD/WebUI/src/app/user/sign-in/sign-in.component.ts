@@ -16,7 +16,9 @@ export class SignInComponent implements OnInit {
 	serverErrorMessages: string;
 	showErrorMessage = false;
 
-	constructor(private fb: FormBuilder, private router: Router, private userService: UserService) { }
+	constructor(private fb: FormBuilder, private router: Router, private userService: UserService) {
+		console.log("sign in cllaws");
+	}
 
 	ngOnInit() {
 		this.createForm();

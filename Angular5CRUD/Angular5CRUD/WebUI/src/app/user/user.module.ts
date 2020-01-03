@@ -24,4 +24,9 @@ import { AuthGuard } from '../auth/auth.guard';
 		UserService
 	]
 })
-export class UserModule { }
+export class UserModule {
+
+	constructor() {
+		console.log("user module loaded");
+	}
+ }

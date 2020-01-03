@@ -10,3 +10,15 @@ C:\BDOffice\ResearchAndDevelopment\Angular\Angular5CRUD\EM.DataAccess\obj\Debug\
 C:\BDOffice\ResearchAndDevelopment\Angular\Angular5CRUD\EM.DataAccess\obj\Debug\EM.DataAccess.dll
 C:\BDOffice\ResearchAndDevelopment\Angular\Angular5CRUD\EM.DataAccess\obj\Debug\EM.DataAccess.pdb
 C:\BDOffice\ResearchAndDevelopment\Angular\Angular5CRUD\EM.DataAccess\obj\Debug\EM.DataAccess.csprojAssemblyReference.cache
+C:\BDOffice\ResearchAndDevelopment\GIT\repo-angular5-crud\Angular5CRUD\EM.DataAccess\bin\Debug\EM.DataAccess.dll.config
+C:\BDOffice\ResearchAndDevelopment\GIT\repo-angular5-crud\Angular5CRUD\EM.DataAccess\bin\Debug\EM.DataAccess.dll
+C:\BDOffice\ResearchAndDevelopment\GIT\repo-angular5-crud\Angular5CRUD\EM.DataAccess\bin\Debug\EM.DataAccess.pdb
+C:\BDOffice\ResearchAndDevelopment\GIT\repo-angular5-crud\Angular5CRUD\EM.DataAccess\bin\Debug\EntityFramework.dll
+C:\BDOffice\ResearchAndDevelopment\GIT\repo-angular5-crud\Angular5CRUD\EM.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\BDOffice\ResearchAndDevelopment\GIT\repo-angular5-crud\Angular5CRUD\EM.DataAccess\bin\Debug\EntityFramework.xml
+C:\BDOffice\ResearchAndDevelopment\GIT\repo-angular5-crud\Angular5CRUD\EM.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\BDOffice\ResearchAndDevelopment\GIT\repo-angular5-crud\Angular5CRUD\EM.DataAccess\obj\Debug\EM.DataAccess.csprojAssemblyReference.cache
+C:\BDOffice\ResearchAndDevelopment\GIT\repo-angular5-crud\Angular5CRUD\EM.DataAccess\obj\Debug\EM.DataAccess.csproj.CoreCompileInputs.cache
+C:\BDOffice\ResearchAndDevelopment\GIT\repo-angular5-crud\Angular5CRUD\EM.DataAccess\obj\Debug\EM.DataAccess.csproj.CopyComplete
+C:\BDOffice\ResearchAndDevelopment\GIT\repo-angular5-crud\Angular5CRUD\EM.DataAccess\obj\Debug\EM.DataAccess.dll
+C:\BDOffice\ResearchAndDevelopment\GIT\repo-angular5-crud\Angular5CRUD\EM.DataAccess\obj\Debug\EM.DataAccess.pdb

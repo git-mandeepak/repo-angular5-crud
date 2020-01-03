@@ -10,7 +10,7 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class UserService {
-	//readonly rootUrl = 'http://gind04lxb5rf0n2.bdx.com/EM.WebApi/api';
+	// readonly rootUrl = 'http://gind04lxb5rf0n2.bdx.com/EM.WebApi/api';
 	readonly rootUrl = environment.apiBaseUrl;
 	constructor(private http: HttpClient) { }
 
@@ -24,7 +24,7 @@ export class UserService {
 		};
 
 		const reqHeader = new HttpHeaders({ 'No-Auth': 'True', 'Content-Type': 'application/json' });
-		//return this.http.post(this.rootUrl + '/api/User/Register', body, { headers: reqHeader });
+		// return this.http.post(this.rootUrl + '/api/User/Register', body, { headers: reqHeader });
 		return this.http.post(this.rootUrl + '/User/register', body, { headers: reqHeader });
 	}
 

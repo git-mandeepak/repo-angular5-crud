@@ -23,4 +23,8 @@ import { OrderStatsService } from './Services/order-stats.service';
   ],
   providers: [OrderStatsService]
 })
-export class OrderModule { }
+export class OrderModule {
+  constructor() {
+    console.log("order module loaded");
+  }
+ }
